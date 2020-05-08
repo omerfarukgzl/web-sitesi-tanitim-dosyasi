@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="iletisim.css">
+	
+
+    <title>İletisim</title>
+
+  </head>
+  <body>
+  <table>
+   <tr>
+   <form name ="bilgi">
+	   <td class="td4">AD</td>
+	   <td class="td2">:</td>
+	   <td class="td3">
+	   <input type="text" name="ad" />
+	   </td>
+	   </tr>
+	     <tr>
+	     <td class="td4">SOYAD</td>
+	     <td class="td2">:</td>
+	     <td class="td3">
+		 <input type="text" name="soyad" />
+		 </td>
+		 </tr>
+		   <tr>
+	        <td class="td4">E-POSTA</td>
+	         <td class="td2">:</td>
+	          <td class="td3">
+	          <input type="text" name="posta"/>
+	          </td>
+	          </tr>
+		   <tr>
+	       <td class="td4">CİNSİYET</td>
+	       <td class="td2">:</td>
+	       <td class="td3">
+		   Erkek<input type="radio" name="cinsiyet" value="Erkek" />
+		   BAYAN<input type="radio" name="cinsiyet" value="Bayan" />
+		   </td>
+		   </tr>
+		     <tr>
+  			   <td class="td4">MEDENİ DURUM</td>
+	           <td class="td2">:</td>
+               <td class="td3">
+			   EVLİ<input type="radio" name="hal" value="Evliyi" />
+		       BEKAR<input type="radio" name="hal" value="Bekar" />
+			  </td>
+			   </tr>
+			     <tr>
+  			     <td class="td4">SİTEYİ BEĞENDİNİZ Mİ?</td>
+	             <td class="td2">:</td>
+	             <td class="td3">
+				 EVET<input type="radio" name="begen" value="Beğendim" />
+		         HAYIR<input type="radio" name="begen" value="Beğenmedim" />
+				 </td>
+			     </tr>
+				    <tr>
+  			        <td class="td4">SİTENİN HANGİ SAYFASI HOŞUNUZA GİTTİ?</td>
+	                <td class="td2">:</td>
+	                <td class="td3">
+					<select name="begensayfa" id="blok">
+					<option value="Null"> </option>
+					<option value="Cv Sayfası">CV</option>
+					<option value="Şehrim Sayfası">ŞEHRİM</option>
+					<option value="Mirasımız Sayfası">MİRASIMIZ</option>
+					<option value="Anasayfa">ANASAYFA</option>
+					<option value="İletisim Sayfası">İLETİŞİM</option>
+					</td>
+			        </tr>
+
+
+  </form>
+  </table>
+  
+  <script type="text/javascript">
+  function bilgiAl()
+  {
+   var degerAd=document.bilgi.ad.value;
+   var degerSoyad=document.bilgi.soyad.value;
+   var degerPosta=document.bilgi.posta.value;
+   var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+   var degerCinsiyet=document.bilgi.cinsiyet.value;
+   var degerDurum=document.bilgi.hal.value;
+   var degerLike=document.bilgi.begen.value;
+   var degerSayfa=document.bilgi.begensayfa.selectedIndex;
+   var degerText = document.getElementById("textareabox").value;
+    if (degerAd=="" || degerAd==null) 
+	{
+	   alert("LÜTFEN AD ALANINI DOLDURUN !");
+      return false;
+    } 
+	else if (degerSoyad=="" || degerSoyad==null) 
+	{
+	   alert("LUTFEN SOYAD ALANINI DOLDURUN !");
+     return false;
+    } 
+	else if ( reg.test(degerPosta) == false) 
+	{
+	   alert("GEÇERSIZ E POSTA!");
+       return false;
+    } 
+	else if (degerCinsiyet==0) 
+	{
+	   alert("LUTFEN CINSIYET ALANINI DOLDURUNUZ!");
+       return false;
+    } 
+	else if (degerDurum==0) 
+	{
+	   alert("LUTFEN MEDENI HAL ALANINI DOLDURUNUZ!");
+       return false;
+    } 
+	else if (degerLike==0) 
+	{
+	   alert("LUTFEN BEGENI ALANINI DOLDURUNUZ!");
+       return false;
+    } 
+	else if (degerSayfa==0) 
+	{
+	   alert("LUTFEN SAYFA ALANINI DOLDURUNUZ!");
+       return false;
+    } 
+	else if (degerText==0) 
+	{
+	   alert("LUTFEN MESAJ ALANINI DOLDURUNUZ!");
+       return false;
+    } 
+	else
+	{
+      return true;  // form gönderimini iptal et
+    }
+  }
+   function sifirla()
+   {
+   document.bilgi.reset();
+   document.getElementById("textareabox").value = '';
+   }
+</script>
+
+<div>
+ <textarea id="textareabox" name="mesaj"  cols="50" rows="18"  placeholder="Start here..."></textarea>
+   <br><input type="button" name="gonder" value="GÖNDER" onclick="bilgiAl()"/>
+	 <input type="button" name="temizle" value="TEMİZLE" onclick="sifirla()"/>  
+  </div>
+  </body>
+  </html>
