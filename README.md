@@ -1,5 +1,4 @@
-# web-sitesi-tanitim-dosyasi
-
+# Tanıtım dosyası ve PHP-HTML-JavaScript-CSS-Bootstrap Web proje kodları
 Hocam Merhaba,
 
 - PHP sayfalarını wampserver da çalıştırmanız gerekmektedir.
