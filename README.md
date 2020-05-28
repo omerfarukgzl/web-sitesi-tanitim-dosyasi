@@ -9,4 +9,4 @@ Hocam Merhaba,
 
 - http://g191210068.000webhostapp.com/ 
 - webhostapp linki yukaridadir.Kullanici adi: g191210068@sakarya.edu.tr .... sifre : 1234
-
+- webhostapp linkini mecburi olarak gerekli açıklamayla birlikte mail yoluyla gönderdim.
